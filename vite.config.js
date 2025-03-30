@@ -10,4 +10,14 @@ export default defineConfig({
         }),
         react(),
     ],
+    server: {
+        host: true,
+        port: process.env.VITE_APP_PORT || 5173,
+        hmr: {
+            host: process.env.VITE_APP_HOST || 'localhost',
+        },
+        watch: {
+            usePolling: true,
+        },
+    },
 });
